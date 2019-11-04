@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "5Wokdf82qQSh2UkFbPBUS5",
+    "name" : "PurchaseOrderCn",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "xg-gt-15340-2019-10-28T14:56:31.375Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "INVALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "g0vMh4N48kDjjb8EZRR48B",
+    "name" : "PurchaseOrderSvcCn",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "iWVdzm5Y6tMFygl-gt-5001-2019-10-22T18:43:37.133Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This synchronous inbound service enables you  to create, update, and delete purchase orders  with the data provided in a payload. It is based  on the OData protocol and can be consumed  in Fiori apps and on other user interfaces.",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    },
+    "path" : "/Explore/Custom Demos/Ford"
+  } ]
+}

@@ -1,0 +1,47 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>xg-gt-15340-2019-10-28T14:56:31.375Z::conn.xml</types1:EntryId>
+      <types1:Name>PurchaseOrderCn</types1:Name>
+      <types1:ParentFlowIds>pHALVYxWPQE8jIw-gt-13014-2019-10-28T14:56:32.5Z::pd.xml</types1:ParentFlowIds>
+      <types1:MimeType>application/xml+connection</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>bhim-prerelease</types1:CreatedBy>
+      <types1:CreationDate>2019-10-28T14:56:31Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <connection xmlns="http://schemas.informatica.com/socrates/data-services/2014/04/avosConnections.xsd"
+                     displayName="PurchaseOrderCn"
+                     label="PurchaseOrderCn"
+                     name="PurchaseOrderCn">
+            <description/>
+            <tags/>
+            <agent/>
+            <attributes>
+               <attribute encrypted="false" name="hostName" value="sandbox.api.sap.com"/>
+               <attribute encrypted="false" name="username" value=""/>
+               <attribute encrypted="true" name="password" value=""/>
+            </attributes>
+            <businessConnector xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd"
+                               agentOnly="false"
+                               connectorPath="project:/rt.connector/PurchaseOrderSvcCn/PurchaseOrderSvcCn_svcDef.xml"
+                               guid="g0vMh4N48kDjjb8EZRR48B"
+                               name="PurchaseOrderSvcCn"
+                               supportsConnectionTest="false"
+                               uuid="b194cca1-febd-4adc-b51c-e926e4cd8e68">
+               <description>This synchronous inbound service enables you  to create, update, and delete purchase orders  with the data provided in a payload. It is based  on the OData protocol and can be consumed  in Fiori apps and on other user interfaces.</description>
+            </businessConnector>
+         </connection>
+      </types1:Entry>
+      <types1:GUID>5Wokdf82qQSh2UkFbPBUS5</types1:GUID>
+      <types1:DisplayName>PurchaseOrderCn</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-11-04T15:40:41.524Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

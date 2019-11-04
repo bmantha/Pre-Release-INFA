@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "fChqSEvfXqzfjj5xaToSSt",
+    "name" : "CostCenterSvcCn",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "r9clzHfSTu0kMVX-gt-5009-2019-10-22T18:43:37.282Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "This service enables you to display cost center master  data to be consumed in SAP Fiori apps and on other  user interfaces.Check in .....",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

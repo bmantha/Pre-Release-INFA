@@ -1,0 +1,22 @@
+{
+  "objectInfo" : {
+    "id" : "7KPEyfczbMfe8Hhc60Vd8C",
+    "name" : "Custom Demos",
+    "type" : "Project",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 0,
+        "minor" : 0
+      },
+      "repoInfo" : null,
+      "contextAttributes" : [ ],
+      "additionalInfo" : {
+        "description" : "This contains all customer's custom demos ",
+        "contentType" : "Binary",
+        "documentState" : "COMPLETE"
+      }
+    }
+  },
+  "dataFileExtension" : "json",
+  "objectRefs" : [ ]
+}

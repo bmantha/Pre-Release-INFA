@@ -1,0 +1,824 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>r9clzHfSTu0kMVX-gt-5009-2019-10-22T18:43:37.282Z::svc.xml</types1:EntryId>
+      <types1:Name>CostCenterSvcCn</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>This service enables you to display cost center master  data to be consumed in SAP Fiori apps and on other  user interfaces.Check in .....</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>bhim-prerelease</types1:CreatedBy>
+      <types1:CreationDate>2019-10-22T18:43:37Z</types1:CreationDate>
+      <types1:ModifiedBy>bhim-prerelease</types1:ModifiedBy>
+      <types1:ModificationDate>2019-10-28T15:14:46Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>bhim-prerelease</types1:PublishedBy>
+      <types1:PublicationDate>2019-10-22T18:46:08Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/CostCenterSvcCn/CostCenterSvcCn_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="CostCenterSvcCn"
+                            label=""
+                            name="CostCenterSvcCn"
+                            uuid="232cd9c9-74c9-4112-b2c7-371b10cb235d">
+            <description>This service enables you to display cost center master  data to be consumed in SAP Fiori apps and on other  user interfaces.Check in .....</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="Host Name"
+                                    masked="false"
+                                    name="hostName"
+                                    required="true"
+                                    testWith="sandbox.api.sap.com"
+                                    type="string"/>
+               <connectionAttribute description="User Name"
+                                    masked="false"
+                                    name="username"
+                                    required="true"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description="Password"
+                                    masked="true"
+                                    name="password"
+                                    required="true"
+                                    testWith=""
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category="A_CostCenter"
+                       failOnError="true"
+                       forSearch="false"
+                       label="GET_A_CostCenter"
+                       maxRedirects="100"
+                       name="GET_A_CostCenter"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get entities from A_CostCenter</description>
+                  <input>
+                     <parameter description="Show only the first n items, see [OData Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)"
+                                label="$top"
+                                name="$top"
+                                required="false"
+                                testWith="1"
+                                type="int"/>
+                     <parameter description="Skip the first n items, see [OData Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)"
+                                label="$skip"
+                                name="$skip"
+                                required="false"
+                                testWith=""
+                                type="int"/>
+                     <parameter description="Filter items by property values, see [OData Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)"
+                                label="$filter"
+                                name="$filter"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Include count of items, see [OData Count](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/#InlinecountSystemQueryOption)"
+                                label="$inlinecount"
+                                name="$inlinecount"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"allpages","label":"allpages"},{"value":"none","label":"none"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)"
+                                label="$orderby"
+                                name="$orderby"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"ControllingArea","label":"ControllingArea"},{"value":"ControllingArea desc","label":"ControllingArea desc"},{"value":"CostCenter","label":"CostCenter"},{"value":"CostCenter desc","label":"CostCenter desc"},{"value":"ValidityEndDate","label":"ValidityEndDate"},{"value":"ValidityEndDate desc","label":"ValidityEndDate desc"},{"value":"ValidityStartDate","label":"ValidityStartDate"},{"value":"ValidityStartDate desc","label":"ValidityStartDate desc"},{"value":"CompanyCode","label":"CompanyCode"},{"value":"CompanyCode desc","label":"CompanyCode desc"},{"value":"BusinessArea","label":"BusinessArea"},{"value":"BusinessArea desc","label":"BusinessArea desc"},{"value":"CostCtrResponsiblePersonName","label":"CostCtrResponsiblePersonName"},{"value":"CostCtrResponsiblePersonName desc","label":"CostCtrResponsiblePersonName desc"},{"value":"CostCtrResponsibleUser","label":"CostCtrResponsibleUser"},{"value":"CostCtrResponsibleUser desc","label":"CostCtrResponsibleUser desc"},{"value":"CostCenterCurrency","label":"CostCenterCurrency"},{"value":"CostCenterCurrency desc","label":"CostCenterCurrency desc"},{"value":"ProfitCenter","label":"ProfitCenter"},{"value":"ProfitCenter desc","label":"ProfitCenter desc"},{"value":"Department","label":"Department"},{"value":"Department desc","label":"Department desc"},{"value":"CostingSheet","label":"CostingSheet"},{"value":"CostingSheet desc","label":"CostingSheet desc"},{"value":"FunctionalArea","label":"FunctionalArea"},{"value":"FunctionalArea desc","label":"FunctionalArea desc"},{"value":"Country","label":"Country"},{"value":"Country desc","label":"Country desc"},{"value":"Region","label":"Region"},{"value":"Region desc","label":"Region desc"},{"value":"CityName","label":"CityName"},{"value":"CityName desc","label":"CityName desc"},{"value":"CostCenterStandardHierArea","label":"CostCenterStandardHierArea"},{"value":"CostCenterStandardHierArea desc","label":"CostCenterStandardHierArea desc"},{"value":"CostCenterCategory","label":"CostCenterCategory"},{"value":"CostCenterCategory desc","label":"CostCenterCategory desc"},{"value":"IsBlkdForPrimaryCostsPosting","label":"IsBlkdForPrimaryCostsPosting"},{"value":"IsBlkdForPrimaryCostsPosting desc","label":"IsBlkdForPrimaryCostsPosting desc"},{"value":"IsBlkdForSecondaryCostsPosting","label":"IsBlkdForSecondaryCostsPosting"},{"value":"IsBlkdForSecondaryCostsPosting desc","label":"IsBlkdForSecondaryCostsPosting desc"},{"value":"IsBlockedForRevenuePosting","label":"IsBlockedForRevenuePosting"},{"value":"IsBlockedForRevenuePosting desc","label":"IsBlockedForRevenuePosting desc"},{"value":"IsBlockedForCommitmentPosting","label":"IsBlockedForCommitmentPosting"},{"value":"IsBlockedForCommitmentPosting desc","label":"IsBlockedForCommitmentPosting desc"},{"value":"IsBlockedForPlanPrimaryCosts","label":"IsBlockedForPlanPrimaryCosts"},{"value":"IsBlockedForPlanPrimaryCosts desc","label":"IsBlockedForPlanPrimaryCosts desc"},{"value":"IsBlockedForPlanSecondaryCosts","label":"IsBlockedForPlanSecondaryCosts"},{"value":"IsBlockedForPlanSecondaryCosts desc","label":"IsBlockedForPlanSecondaryCosts desc"},{"value":"IsBlockedForPlanRevenues","label":"IsBlockedForPlanRevenues"},{"value":"IsBlockedForPlanRevenues desc","label":"IsBlockedForPlanRevenues desc"},{"value":"ConsumptionQtyIsRecorded","label":"ConsumptionQtyIsRecorded"},{"value":"ConsumptionQtyIsRecorded desc","label":"ConsumptionQtyIsRecorded desc"},{"value":"Language","label":"Language"},{"value":"Language desc","label":"Language desc"},{"value":"CostCenterCreatedByUser","label":"CostCenterCreatedByUser"},{"value":"CostCenterCreatedByUser desc","label":"CostCenterCreatedByUser desc"},{"value":"CostCenterCreationDate","label":"CostCenterCreationDate"},{"value":"CostCenterCreationDate desc","label":"CostCenterCreationDate desc"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)"
+                                label="$select"
+                                name="$select"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"ControllingArea","label":"ControllingArea"},{"value":"CostCenter","label":"CostCenter"},{"value":"ValidityEndDate","label":"ValidityEndDate"},{"value":"ValidityStartDate","label":"ValidityStartDate"},{"value":"CompanyCode","label":"CompanyCode"},{"value":"BusinessArea","label":"BusinessArea"},{"value":"CostCtrResponsiblePersonName","label":"CostCtrResponsiblePersonName"},{"value":"CostCtrResponsibleUser","label":"CostCtrResponsibleUser"},{"value":"CostCenterCurrency","label":"CostCenterCurrency"},{"value":"ProfitCenter","label":"ProfitCenter"},{"value":"Department","label":"Department"},{"value":"CostingSheet","label":"CostingSheet"},{"value":"FunctionalArea","label":"FunctionalArea"},{"value":"Country","label":"Country"},{"value":"Region","label":"Region"},{"value":"CityName","label":"CityName"},{"value":"CostCenterStandardHierArea","label":"CostCenterStandardHierArea"},{"value":"CostCenterCategory","label":"CostCenterCategory"},{"value":"IsBlkdForPrimaryCostsPosting","label":"IsBlkdForPrimaryCostsPosting"},{"value":"IsBlkdForSecondaryCostsPosting","label":"IsBlkdForSecondaryCostsPosting"},{"value":"IsBlockedForRevenuePosting","label":"IsBlockedForRevenuePosting"},{"value":"IsBlockedForCommitmentPosting","label":"IsBlockedForCommitmentPosting"},{"value":"IsBlockedForPlanPrimaryCosts","label":"IsBlockedForPlanPrimaryCosts"},{"value":"IsBlockedForPlanSecondaryCosts","label":"IsBlockedForPlanSecondaryCosts"},{"value":"IsBlockedForPlanRevenues","label":"IsBlockedForPlanRevenues"},{"value":"ConsumptionQtyIsRecorded","label":"ConsumptionQtyIsRecorded"},{"value":"Language","label":"Language"},{"value":"CostCenterCreatedByUser","label":"CostCenterCreatedByUser"},{"value":"CostCenterCreationDate","label":"CostCenterCreationDate"},{"value":"to_Text","label":"to_Text"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Expand related entities, see [OData Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)"
+                                label="$expand"
+                                name="$expand"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"to_Text","label":"to_Text"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/s4hanacloud/sap/opu/odata/sap/API_COSTCENTER_SRV/A_CostCenter"
+                                        verb="GET">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                           <header name="apikey">3a4FYpbfxILCRgeYaF3egTnS6E97QUxM</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Retrieved entities"
+                            name="costCenterResponse"
+                            type="objectlist">
+                        <options>
+                           <option name="referenceTo">API_COSTCENTER_SRV_A_CostCenterType</option>
+                        </options>
+                        <xquery>{//d/results}</xquery>
+                     </field>
+                  </output>
+               </action>
+               <action category="A_CostCenter"
+                       failOnError="true"
+                       forSearch="false"
+                       label="GET_A_CostCenter_ControllingArea_ControllingArea_CostCenter_CostCenter_ValidityEndDate_ValidityEndDate_to_Text"
+                       maxRedirects="100"
+                       name="GET_A_CostCenter_ControllingArea_ControllingArea_CostCenter_CostCenter_ValidityEndDate_ValidityEndDate_to_Text"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get related A_CostCenterText</description>
+                  <input>
+                     <parameter description="Uniquely identifies a controlling area.  &#xA;The controlling area is the highest organizational unit in Controlling.Whether controlling area and company code are in a 1:1 relationship or a 1:n relationship, the number of posting periods in both controlling area and company code(s) must be identical. However, special periods may vary."
+                                label="ControllingAreaPathParam"
+                                name="ControllingAreaPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="A key that uniquely identifies a cost center."
+                                label="CostCenterPathParam"
+                                name="CostCenterPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Valid To Date  &#xA;Date indicating up to when an entry is valid."
+                                label="ValidityEndDatePathParam"
+                                name="ValidityEndDatePathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Show only the first n items, see [OData Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)"
+                                label="$top"
+                                name="$top"
+                                required="false"
+                                testWith=""
+                                type="int"/>
+                     <parameter description="Skip the first n items, see [OData Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)"
+                                label="$skip"
+                                name="$skip"
+                                required="false"
+                                testWith=""
+                                type="int"/>
+                     <parameter description="Filter items by property values, see [OData Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)"
+                                label="$filter"
+                                name="$filter"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Include count of items, see [OData Count](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/#InlinecountSystemQueryOption)"
+                                label="$inlinecount"
+                                name="$inlinecount"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"allpages","label":"allpages"},{"value":"none","label":"none"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)"
+                                label="$orderby"
+                                name="$orderby"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"CostCenter","label":"CostCenter"},{"value":"CostCenter desc","label":"CostCenter desc"},{"value":"ControllingArea","label":"ControllingArea"},{"value":"ControllingArea desc","label":"ControllingArea desc"},{"value":"Language","label":"Language"},{"value":"Language desc","label":"Language desc"},{"value":"ValidityEndDate","label":"ValidityEndDate"},{"value":"ValidityEndDate desc","label":"ValidityEndDate desc"},{"value":"ValidityStartDate","label":"ValidityStartDate"},{"value":"ValidityStartDate desc","label":"ValidityStartDate desc"},{"value":"CostCenterName","label":"CostCenterName"},{"value":"CostCenterName desc","label":"CostCenterName desc"},{"value":"CostCenterDescription","label":"CostCenterDescription"},{"value":"CostCenterDescription desc","label":"CostCenterDescription desc"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)"
+                                label="$select"
+                                name="$select"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"CostCenter","label":"CostCenter"},{"value":"ControllingArea","label":"ControllingArea"},{"value":"Language","label":"Language"},{"value":"ValidityEndDate","label":"ValidityEndDate"},{"value":"ValidityStartDate","label":"ValidityStartDate"},{"value":"CostCenterName","label":"CostCenterName"},{"value":"CostCenterDescription","label":"CostCenterDescription"},{"value":"to_CostCenter","label":"to_CostCenter"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Expand related entities, see [OData Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)"
+                                label="$expand"
+                                name="$expand"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"to_CostCenter","label":"to_CostCenter"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/s4hanacloud/sap/opu/odata/sap/API_COSTCENTER_SRV/A_CostCenter(ControllingArea='{$ControllingAreaPathParam}',CostCenter='{$CostCenterPathParam}',ValidityEndDate={$ValidityEndDatePathParam})/to_Text"
+                                        verb="GET">
+                        <authentication>
+                           <username>{$username}</username>
+                           <password>{$password}</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Retrieved entities"
+                            entireResponse="true"
+                            name="entireResponse"
+                            type="object"/>
+                  </output>
+               </action>
+               <action category="A_CostCenterText"
+                       failOnError="true"
+                       forSearch="false"
+                       label="GET_A_CostCenterText_CostCenter_CostCenter_ControllingArea_ControllingArea_Language_Language_ValidityEndDate_ValidityEndDate_to_CostCenter"
+                       maxRedirects="100"
+                       name="GET_A_CostCenterText_CostCenter_CostCenter_ControllingArea_ControllingArea_Language_Language_ValidityEndDate_ValidityEndDate_to_CostCenter"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get related A_CostCenter</description>
+                  <input>
+                     <parameter description="A key that uniquely identifies a cost center."
+                                label="CostCenterPathParam"
+                                name="CostCenterPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Uniquely identifies a controlling area.  &#xA;The controlling area is the highest organizational unit in Controlling.Whether controlling area and company code are in a 1:1 relationship or a 1:n relationship, the number of posting periods in both controlling area and company code(s) must be identical. However, special periods may vary."
+                                label="ControllingAreaPathParam"
+                                name="ControllingAreaPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="The language key indicates  &#xA;- the language in which texts are displayed,- the language in which you enter texts,- the language in which the system prints texts."
+                                label="LanguagePathParam"
+                                name="LanguagePathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Valid To Date  &#xA;Date indicating up to when an entry is valid."
+                                label="ValidityEndDatePathParam"
+                                name="ValidityEndDatePathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)"
+                                label="$select"
+                                name="$select"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"ControllingArea","label":"ControllingArea"},{"value":"CostCenter","label":"CostCenter"},{"value":"ValidityEndDate","label":"ValidityEndDate"},{"value":"ValidityStartDate","label":"ValidityStartDate"},{"value":"CompanyCode","label":"CompanyCode"},{"value":"BusinessArea","label":"BusinessArea"},{"value":"CostCtrResponsiblePersonName","label":"CostCtrResponsiblePersonName"},{"value":"CostCtrResponsibleUser","label":"CostCtrResponsibleUser"},{"value":"CostCenterCurrency","label":"CostCenterCurrency"},{"value":"ProfitCenter","label":"ProfitCenter"},{"value":"Department","label":"Department"},{"value":"CostingSheet","label":"CostingSheet"},{"value":"FunctionalArea","label":"FunctionalArea"},{"value":"Country","label":"Country"},{"value":"Region","label":"Region"},{"value":"CityName","label":"CityName"},{"value":"CostCenterStandardHierArea","label":"CostCenterStandardHierArea"},{"value":"CostCenterCategory","label":"CostCenterCategory"},{"value":"IsBlkdForPrimaryCostsPosting","label":"IsBlkdForPrimaryCostsPosting"},{"value":"IsBlkdForSecondaryCostsPosting","label":"IsBlkdForSecondaryCostsPosting"},{"value":"IsBlockedForRevenuePosting","label":"IsBlockedForRevenuePosting"},{"value":"IsBlockedForCommitmentPosting","label":"IsBlockedForCommitmentPosting"},{"value":"IsBlockedForPlanPrimaryCosts","label":"IsBlockedForPlanPrimaryCosts"},{"value":"IsBlockedForPlanSecondaryCosts","label":"IsBlockedForPlanSecondaryCosts"},{"value":"IsBlockedForPlanRevenues","label":"IsBlockedForPlanRevenues"},{"value":"ConsumptionQtyIsRecorded","label":"ConsumptionQtyIsRecorded"},{"value":"Language","label":"Language"},{"value":"CostCenterCreatedByUser","label":"CostCenterCreatedByUser"},{"value":"CostCenterCreationDate","label":"CostCenterCreationDate"},{"value":"to_Text","label":"to_Text"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Expand related entities, see [OData Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)"
+                                label="$expand"
+                                name="$expand"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"to_Text","label":"to_Text"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/s4hanacloud/sap/opu/odata/sap/API_COSTCENTER_SRV/A_CostCenterText(CostCenter='{$CostCenterPathParam}',ControllingArea='{$ControllingAreaPathParam}',Language='{$LanguagePathParam}',ValidityEndDate={$ValidityEndDatePathParam})/to_CostCenter"
+                                        verb="GET">
+                        <authentication>
+                           <username>{$username}</username>
+                           <password>{$password}</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Retrieved entities"
+                            entireResponse="true"
+                            name="entireResponse"
+                            type="object"/>
+                  </output>
+               </action>
+               <action category="A_CostCenter"
+                       failOnError="true"
+                       forSearch="false"
+                       label="GET_A_CostCenter_ControllingArea_ControllingArea_CostCenter_CostCenter_ValidityEndDate_ValidityEndDate_"
+                       maxRedirects="100"
+                       name="GET_A_CostCenter_ControllingArea_ControllingArea_CostCenter_CostCenter_ValidityEndDate_ValidityEndDate_"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get entity from A_CostCenter by key</description>
+                  <input>
+                     <parameter description="Uniquely identifies a controlling area.  &#xA;The controlling area is the highest organizational unit in Controlling.Whether controlling area and company code are in a 1:1 relationship or a 1:n relationship, the number of posting periods in both controlling area and company code(s) must be identical. However, special periods may vary."
+                                label="ControllingAreaPathParam"
+                                name="ControllingAreaPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="A key that uniquely identifies a cost center."
+                                label="CostCenterPathParam"
+                                name="CostCenterPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Valid To Date  &#xA;Date indicating up to when an entry is valid."
+                                label="ValidityEndDatePathParam"
+                                name="ValidityEndDatePathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)"
+                                label="$select"
+                                name="$select"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"ControllingArea","label":"ControllingArea"},{"value":"CostCenter","label":"CostCenter"},{"value":"ValidityEndDate","label":"ValidityEndDate"},{"value":"ValidityStartDate","label":"ValidityStartDate"},{"value":"CompanyCode","label":"CompanyCode"},{"value":"BusinessArea","label":"BusinessArea"},{"value":"CostCtrResponsiblePersonName","label":"CostCtrResponsiblePersonName"},{"value":"CostCtrResponsibleUser","label":"CostCtrResponsibleUser"},{"value":"CostCenterCurrency","label":"CostCenterCurrency"},{"value":"ProfitCenter","label":"ProfitCenter"},{"value":"Department","label":"Department"},{"value":"CostingSheet","label":"CostingSheet"},{"value":"FunctionalArea","label":"FunctionalArea"},{"value":"Country","label":"Country"},{"value":"Region","label":"Region"},{"value":"CityName","label":"CityName"},{"value":"CostCenterStandardHierArea","label":"CostCenterStandardHierArea"},{"value":"CostCenterCategory","label":"CostCenterCategory"},{"value":"IsBlkdForPrimaryCostsPosting","label":"IsBlkdForPrimaryCostsPosting"},{"value":"IsBlkdForSecondaryCostsPosting","label":"IsBlkdForSecondaryCostsPosting"},{"value":"IsBlockedForRevenuePosting","label":"IsBlockedForRevenuePosting"},{"value":"IsBlockedForCommitmentPosting","label":"IsBlockedForCommitmentPosting"},{"value":"IsBlockedForPlanPrimaryCosts","label":"IsBlockedForPlanPrimaryCosts"},{"value":"IsBlockedForPlanSecondaryCosts","label":"IsBlockedForPlanSecondaryCosts"},{"value":"IsBlockedForPlanRevenues","label":"IsBlockedForPlanRevenues"},{"value":"ConsumptionQtyIsRecorded","label":"ConsumptionQtyIsRecorded"},{"value":"Language","label":"Language"},{"value":"CostCenterCreatedByUser","label":"CostCenterCreatedByUser"},{"value":"CostCenterCreationDate","label":"CostCenterCreationDate"},{"value":"to_Text","label":"to_Text"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Expand related entities, see [OData Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)"
+                                label="$expand"
+                                name="$expand"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"to_Text","label":"to_Text"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/s4hanacloud/sap/opu/odata/sap/API_COSTCENTER_SRV/A_CostCenter(ControllingArea='{$ControllingAreaPathParam}',CostCenter='{$CostCenterPathParam}',ValidityEndDate={$ValidityEndDatePathParam})"
+                                        verb="GET">
+                        <authentication>
+                           <username>{$username}</username>
+                           <password>{$password}</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Retrieved entity"
+                            entireResponse="true"
+                            name="entireResponse"
+                            type="object"/>
+                  </output>
+               </action>
+               <action category="A_CostCenterText"
+                       failOnError="true"
+                       forSearch="false"
+                       label="GET_A_CostCenterText_CostCenter_CostCenter_ControllingArea_ControllingArea_Language_Language_ValidityEndDate_ValidityEndDate_"
+                       maxRedirects="100"
+                       name="GET_A_CostCenterText_CostCenter_CostCenter_ControllingArea_ControllingArea_Language_Language_ValidityEndDate_ValidityEndDate_"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get entity from A_CostCenterText by key</description>
+                  <input>
+                     <parameter description="A key that uniquely identifies a cost center."
+                                label="CostCenterPathParam"
+                                name="CostCenterPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Uniquely identifies a controlling area.  &#xA;The controlling area is the highest organizational unit in Controlling.Whether controlling area and company code are in a 1:1 relationship or a 1:n relationship, the number of posting periods in both controlling area and company code(s) must be identical. However, special periods may vary."
+                                label="ControllingAreaPathParam"
+                                name="ControllingAreaPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="The language key indicates  &#xA;- the language in which texts are displayed,- the language in which you enter texts,- the language in which the system prints texts."
+                                label="LanguagePathParam"
+                                name="LanguagePathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Valid To Date  &#xA;Date indicating up to when an entry is valid."
+                                label="ValidityEndDatePathParam"
+                                name="ValidityEndDatePathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)"
+                                label="$select"
+                                name="$select"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"CostCenter","label":"CostCenter"},{"value":"ControllingArea","label":"ControllingArea"},{"value":"Language","label":"Language"},{"value":"ValidityEndDate","label":"ValidityEndDate"},{"value":"ValidityStartDate","label":"ValidityStartDate"},{"value":"CostCenterName","label":"CostCenterName"},{"value":"CostCenterDescription","label":"CostCenterDescription"},{"value":"to_CostCenter","label":"to_CostCenter"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Expand related entities, see [OData Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)"
+                                label="$expand"
+                                name="$expand"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"to_CostCenter","label":"to_CostCenter"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/s4hanacloud/sap/opu/odata/sap/API_COSTCENTER_SRV/A_CostCenterText(CostCenter='{$CostCenterPathParam}',ControllingArea='{$ControllingAreaPathParam}',Language='{$LanguagePathParam}',ValidityEndDate={$ValidityEndDatePathParam})"
+                                        verb="GET">
+                        <authentication>
+                           <username>{$username}</username>
+                           <password>{$password}</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Retrieved entity"
+                            entireResponse="true"
+                            name="entireResponse"
+                            type="object"/>
+                  </output>
+               </action>
+               <action category="A_CostCenterText"
+                       failOnError="true"
+                       forSearch="false"
+                       label="GET_A_CostCenterText"
+                       maxRedirects="100"
+                       name="GET_A_CostCenterText"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get entities from A_CostCenterText</description>
+                  <input>
+                     <parameter description="Show only the first n items, see [OData Paging - Top](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptiontop)"
+                                label="$top"
+                                name="$top"
+                                required="false"
+                                testWith=""
+                                type="int"/>
+                     <parameter description="Skip the first n items, see [OData Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionskip)"
+                                label="$skip"
+                                name="$skip"
+                                required="false"
+                                testWith=""
+                                type="int"/>
+                     <parameter description="Filter items by property values, see [OData Filtering](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionfilter)"
+                                label="$filter"
+                                name="$filter"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Include count of items, see [OData Count](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/#InlinecountSystemQueryOption)"
+                                label="$inlinecount"
+                                name="$inlinecount"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"allpages","label":"allpages"},{"value":"none","label":"none"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionorderby)"
+                                label="$orderby"
+                                name="$orderby"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"CostCenter","label":"CostCenter"},{"value":"CostCenter desc","label":"CostCenter desc"},{"value":"ControllingArea","label":"ControllingArea"},{"value":"ControllingArea desc","label":"ControllingArea desc"},{"value":"Language","label":"Language"},{"value":"Language desc","label":"Language desc"},{"value":"ValidityEndDate","label":"ValidityEndDate"},{"value":"ValidityEndDate desc","label":"ValidityEndDate desc"},{"value":"ValidityStartDate","label":"ValidityStartDate"},{"value":"ValidityStartDate desc","label":"ValidityStartDate desc"},{"value":"CostCenterName","label":"CostCenterName"},{"value":"CostCenterName desc","label":"CostCenterName desc"},{"value":"CostCenterDescription","label":"CostCenterDescription"},{"value":"CostCenterDescription desc","label":"CostCenterDescription desc"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionselect)"
+                                label="$select"
+                                name="$select"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"CostCenter","label":"CostCenter"},{"value":"ControllingArea","label":"ControllingArea"},{"value":"Language","label":"Language"},{"value":"ValidityEndDate","label":"ValidityEndDate"},{"value":"ValidityStartDate","label":"ValidityStartDate"},{"value":"CostCenterName","label":"CostCenterName"},{"value":"CostCenterDescription","label":"CostCenterDescription"},{"value":"to_CostCenter","label":"to_CostCenter"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Expand related entities, see [OData Expand](http://docs.oasis-open.org/odata/odata/v4.01/odata-v4.01-part1-protocol.html#sec_SystemQueryOptionexpand)"
+                                label="$expand"
+                                name="$expand"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"to_CostCenter","label":"to_CostCenter"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/s4hanacloud/sap/opu/odata/sap/API_COSTCENTER_SRV/A_CostCenterText"
+                                        verb="GET">
+                        <authentication>
+                           <username>{$username}</username>
+                           <password>{$password}</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Retrieved entities"
+                            entireResponse="true"
+                            name="entireResponse"
+                            type="object"/>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="API_COSTCENTER_SRV_A_CostCenterType">
+                  <description>API Cost Center</description>
+                  <detail>
+                     <field name="IsBlockedForRevenuePosting" type="string"/>
+                     <field name="CostCenterCreationDate" type="string"/>
+                     <field name="CostCenterCurrency" type="string"/>
+                     <field name="CostCenterCreatedByUser" type="string"/>
+                     <field name="CostCenterCategory" type="string"/>
+                     <field name="to_Text" type="object"/>
+                     <field name="ConsumptionQtyIsRecorded" type="string"/>
+                     <field name="Department" type="string"/>
+                     <field name="IsBlkdForPrimaryCostsPosting" type="string"/>
+                     <field name="CostCenter" type="string"/>
+                     <field name="IsBlkdForSecondaryCostsPosting" type="string"/>
+                     <field name="Language" type="string"/>
+                     <field name="ValidityEndDate" type="string"/>
+                     <field name="FunctionalArea" type="string"/>
+                     <field name="BusinessArea" type="string"/>
+                     <field name="CostCtrResponsibleUser" type="string"/>
+                     <field name="ProfitCenter" type="string"/>
+                     <field name="IsBlockedForCommitmentPosting" type="string"/>
+                     <field name="CityName" type="string"/>
+                     <field name="CostCenterStandardHierArea" type="string"/>
+                     <field name="IsBlockedForPlanRevenues" type="string"/>
+                     <field name="CostCtrResponsiblePersonName" type="string"/>
+                     <field name="IsBlockedForPlanPrimaryCosts" type="string"/>
+                     <field name="Country" type="string"/>
+                     <field name="Region" type="string"/>
+                     <field name="IsBlockedForPlanSecondaryCosts" type="string"/>
+                     <field name="CostingSheet" type="string"/>
+                     <field name="ControllingArea" type="string"/>
+                     <field name="CompanyCode" type="string"/>
+                     <field name="ValidityStartDate" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="odata_error_main">
+                  <description/>
+                  <detail>
+                     <field name="code" type="string"/>
+                     <field name="innererror" type="object"/>
+                     <field name="message" type="reference">
+                        <options>
+                           <option name="referenceTo">odata_error_message</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="odata_error">
+                  <description/>
+                  <detail>
+                     <field name="error" type="reference">
+                        <options>
+                           <option name="referenceTo">odata_error_main</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="API_COSTCENTER_SRV_A_CostCenterType_update">
+                  <description>API Cost Center</description>
+                  <detail>
+                     <field name="IsBlockedForRevenuePosting" type="string"/>
+                     <field name="CostCenterCreationDate" type="string"/>
+                     <field name="CostCenterCurrency" type="string"/>
+                     <field name="CostCenterCreatedByUser" type="string"/>
+                     <field name="CostCenterCategory" type="string"/>
+                     <field name="ConsumptionQtyIsRecorded" type="string"/>
+                     <field name="Department" type="string"/>
+                     <field name="IsBlkdForPrimaryCostsPosting" type="string"/>
+                     <field name="IsBlkdForSecondaryCostsPosting" type="string"/>
+                     <field name="Language" type="string"/>
+                     <field name="FunctionalArea" type="string"/>
+                     <field name="BusinessArea" type="string"/>
+                     <field name="CostCtrResponsibleUser" type="string"/>
+                     <field name="ProfitCenter" type="string"/>
+                     <field name="IsBlockedForCommitmentPosting" type="string"/>
+                     <field name="CityName" type="string"/>
+                     <field name="CostCenterStandardHierArea" type="string"/>
+                     <field name="IsBlockedForPlanRevenues" type="string"/>
+                     <field name="CostCtrResponsiblePersonName" type="string"/>
+                     <field name="IsBlockedForPlanPrimaryCosts" type="string"/>
+                     <field name="Country" type="string"/>
+                     <field name="Region" type="string"/>
+                     <field name="IsBlockedForPlanSecondaryCosts" type="string"/>
+                     <field name="CostingSheet" type="string"/>
+                     <field name="CompanyCode" type="string"/>
+                     <field name="ValidityStartDate" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="API_COSTCENTER_SRV_A_CostCenterTextType_update">
+                  <description>API Cost Center Text</description>
+                  <detail>
+                     <field name="CostCenterName" type="string"/>
+                     <field name="CostCenterDescription" type="string"/>
+                     <field name="ValidityStartDate" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="API_COSTCENTER_SRV_A_CostCenterTextType">
+                  <description>API Cost Center Text</description>
+                  <detail>
+                     <field name="CostCenter" type="string"/>
+                     <field name="Language" type="string"/>
+                     <field name="CostCenterName" type="string"/>
+                     <field name="CostCenterDescription" type="string"/>
+                     <field name="ValidityEndDate" type="string"/>
+                     <field name="to_CostCenter" type="reference">
+                        <options>
+                           <option name="referenceTo">API_COSTCENTER_SRV_A_CostCenterType</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="ControllingArea" type="string"/>
+                     <field name="ValidityStartDate" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="odata_error_message">
+                  <description/>
+                  <detail>
+                     <field name="lang" type="string"/>
+                     <field name="value" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="API_COSTCENTER_SRV_A_CostCenterTextType_create">
+                  <description>API Cost Center Text</description>
+                  <detail>
+                     <field name="CostCenter" type="string"/>
+                     <field name="Language" type="string"/>
+                     <field name="CostCenterName" type="string"/>
+                     <field name="CostCenterDescription" type="string"/>
+                     <field name="ValidityEndDate" type="string"/>
+                     <field name="to_CostCenter" type="reference">
+                        <options>
+                           <option name="referenceTo">API_COSTCENTER_SRV_A_CostCenterType_create</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="ControllingArea" type="string"/>
+                     <field name="ValidityStartDate" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="API_COSTCENTER_SRV_A_CostCenterType_create">
+                  <description>API Cost Center</description>
+                  <detail>
+                     <field name="IsBlockedForRevenuePosting" type="string"/>
+                     <field name="CostCenterCreationDate" type="string"/>
+                     <field name="CostCenterCurrency" type="string"/>
+                     <field name="CostCenterCreatedByUser" type="string"/>
+                     <field name="CostCenterCategory" type="string"/>
+                     <field name="to_Text" type="object"/>
+                     <field name="ConsumptionQtyIsRecorded" type="string"/>
+                     <field name="Department" type="string"/>
+                     <field name="IsBlkdForPrimaryCostsPosting" type="string"/>
+                     <field name="CostCenter" type="string"/>
+                     <field name="IsBlkdForSecondaryCostsPosting" type="string"/>
+                     <field name="Language" type="string"/>
+                     <field name="ValidityEndDate" type="string"/>
+                     <field name="FunctionalArea" type="string"/>
+                     <field name="BusinessArea" type="string"/>
+                     <field name="CostCtrResponsibleUser" type="string"/>
+                     <field name="ProfitCenter" type="string"/>
+                     <field name="IsBlockedForCommitmentPosting" type="string"/>
+                     <field name="CityName" type="string"/>
+                     <field name="CostCenterStandardHierArea" type="string"/>
+                     <field name="IsBlockedForPlanRevenues" type="string"/>
+                     <field name="CostCtrResponsiblePersonName" type="string"/>
+                     <field name="IsBlockedForPlanPrimaryCosts" type="string"/>
+                     <field name="Country" type="string"/>
+                     <field name="Region" type="string"/>
+                     <field name="IsBlockedForPlanSecondaryCosts" type="string"/>
+                     <field name="CostingSheet" type="string"/>
+                     <field name="ControllingArea" type="string"/>
+                     <field name="CompanyCode" type="string"/>
+                     <field name="ValidityStartDate" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="string">
+                  <description/>
+                  <detail>
+                     <field name="string" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="boolean">
+                  <description/>
+                  <detail>
+                     <field name="boolean" type="boolean"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="double">
+                  <description/>
+                  <detail>
+                     <field name="double" type="double"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="integer">
+                  <description/>
+                  <detail>
+                     <field name="integer" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="error">
+                  <description>Error</description>
+                  <detail/>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>fChqSEvfXqzfjj5xaToSSt</types1:GUID>
+      <types1:DisplayName>CostCenterSvcCn</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-11-04T15:40:41.371Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

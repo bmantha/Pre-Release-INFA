@@ -1,0 +1,44 @@
+{
+  "objectInfo" : {
+    "id" : "1GlX2hPiOugkqqk0JMF0mS",
+    "name" : "Get Purchase Order",
+    "type" : "PROCESS",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "pHALVYxWPQE8jIw-gt-13014-2019-10-28T14:56:32.5Z::pd.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ {
+    "id" : "5Wokdf82qQSh2UkFbPBUS5",
+    "name" : "PurchaseOrderCn",
+    "type" : "AI_CONNECTION",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "xg-gt-15340-2019-10-28T14:56:31.375Z::conn.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "INVALID"
+      }
+    },
+    "path" : "/Explore/Custom Demos/Ford"
+  } ]
+}

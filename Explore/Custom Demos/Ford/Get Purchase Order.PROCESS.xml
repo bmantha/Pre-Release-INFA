@@ -1,0 +1,101 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>pHALVYxWPQE8jIw-gt-13014-2019-10-28T14:56:32.5Z::pd.xml</types1:EntryId>
+      <types1:Name>Get_Purchase_Order</types1:Name>
+      <types1:MimeType>application/xml+process</types1:MimeType>
+      <types1:Description/>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>bhim-prerelease</types1:CreatedBy>
+      <types1:CreationDate>2019-10-28T14:56:33Z</types1:CreationDate>
+      <types1:ModifiedBy/>
+      <types1:PublicationStatus>unpublished</types1:PublicationStatus>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <process xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2010/10/avosScreenflow.xsd"
+                  xmlns:list="urn:activevos:spi:list:functions"
+                  displayName="Get Purchase Order"
+                  name="Get_Purchase_Order">
+            <appliesTo/>
+            <description/>
+            <tags/>
+            <generator>Informatica Process Designer 11</generator>
+            <input>
+               <parameter description="" name="poNumber" type="string">
+                  <options>
+                     <option name="required">false</option>
+                  </options>
+               </parameter>
+            </input>
+            <output>
+               <field description="" name="poResponse" type="objectlist">
+                  <options>
+                     <option name="referenceTo">PurchaseOrderCn:API_PURCHASEORDER_PROCESS_SRV_A_PurchaseOrderType</option>
+                     <option hide="true" name="multiSelect">true</option>
+                     <option name="required">false</option>
+                     <option name="isCopy">true</option>
+                     <option name="guid">5Wokdf82qQSh2UkFbPBUS5</option>
+                  </options>
+               </field>
+            </output>
+            <notes/>
+            <deployment suspendOnFault="false" tracingLevel="verbose">
+               <rest>
+                  <allowedGroups>
+                     <group>APIConsumer</group>
+                  </allowedGroups>
+                  <wholePayload outputWholePayload="true"/>
+               </rest>
+            </deployment>
+            <flow id="a">
+               <start id="b">
+                  <link id="k22mzenf" targetId="k22mzene"/>
+               </start>
+               <container id="k22mzene" type="exclusive">
+                  <title>poNumber</title>
+                  <flow id="k22mzeni">
+                     <service id="k22mzeo0">
+                        <title>GET_A_PurchaseOrder_PurchaseOrder_</title>
+                        <serviceName>PurchaseOrderCn:GET_A_PurchaseOrder_PurchaseOrder_</serviceName>
+                        <serviceGUID>5Wokdf82qQSh2UkFbPBUS5</serviceGUID>
+                        <serviceInput>
+                           <parameter name="PurchaseOrderPathParam" source="field" updatable="true">input.poNumber</parameter>
+                        </serviceInput>
+                     </service>
+                     <link id="k22mzenj" targetId="k22mzene" type="containerLink"/>
+                  </flow>
+                  <flow id="k22mzenl">
+                     <service id="k22mzeon">
+                        <title>GET_A_PurchaseOrder</title>
+                        <serviceName>PurchaseOrderCn:GET_A_PurchaseOrder</serviceName>
+                        <serviceGUID>5Wokdf82qQSh2UkFbPBUS5</serviceGUID>
+                        <serviceInput>
+                           <parameter name="$top" source="constant">5</parameter>
+                        </serviceInput>
+                     </service>
+                     <link id="k22mzenm" targetId="k22mzene" type="containerLink"/>
+                  </flow>
+                  <link id="k22mzenh" targetId="k22mzeni" type="containerLink">
+                     <condition source="formula">
+                        <function name="starts-with-any-of">
+                           <arg name="left">{$input.poNumber}</arg>
+                           <arg name="right">0,1,2,3,4,5,6,7,8,9</arg>
+                        </function>
+                     </condition>
+                  </link>
+                  <link id="k22mzenk" targetId="k22mzenl" type="containerLink"/>
+                  <link id="k23mdwmy" targetId="c"/>
+               </container>
+               <end id="c"/>
+            </flow>
+         </process>
+      </types1:Entry>
+      <types1:GUID>1GlX2hPiOugkqqk0JMF0mS</types1:GUID>
+      <types1:DisplayName>Get Purchase Order</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-11-04T15:40:41.649Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>

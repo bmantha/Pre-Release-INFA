@@ -1,0 +1,24 @@
+{
+  "objectInfo" : {
+    "id" : "j3jeOVTiverc1hLtmTxoo3",
+    "name" : "OrderManagerSvcCn",
+    "type" : "AI_SERVICE_CONNECTOR",
+    "metadata" : {
+      "modelVersion" : {
+        "major" : 1,
+        "minor" : 0
+      },
+      "repoInfo" : {
+        "repoHandle" : "BbeAzu2JQhtGci3-gt-29510-2019-10-28T14:56:30.447Z::svc.xml"
+      },
+      "contextAttributes" : null,
+      "additionalInfo" : {
+        "description" : "",
+        "contentType" : "application/json; charset=utf-8",
+        "documentState" : "VALID"
+      }
+    }
+  },
+  "dataFileExtension" : "xml",
+  "objectRefs" : [ ]
+}

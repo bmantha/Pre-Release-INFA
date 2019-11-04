@@ -1,0 +1,544 @@
+<aetgt:getResponse xmlns:aetgt="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd"
+                   xmlns:types1="http://schemas.active-endpoints.com/appmodules/repository/2010/10/avrepository.xsd">
+   <types1:Item>
+      <types1:EntryId>x72yIYmWR7hsAVR-gt-5017-2019-10-22T18:43:37.373Z::svc.xml</types1:EntryId>
+      <types1:Name>MaterialStockSvcCn</types1:Name>
+      <types1:MimeType>application/xml+businesssconnector</types1:MimeType>
+      <types1:Description>This service enables you to retrieve material stock information using the OData protocol with filter data provided in the payload. It can be consumed by external warehouse applications.</types1:Description>
+      <types1:AppliesTo/>
+      <types1:Tags/>
+      <types1:VersionLabel>1.0</types1:VersionLabel>
+      <types1:State>CURRENT</types1:State>
+      <types1:ProcessGroup/>
+      <types1:CreatedBy>bhim-prerelease</types1:CreatedBy>
+      <types1:CreationDate>2019-10-22T18:43:37Z</types1:CreationDate>
+      <types1:ModifiedBy>bhim-prerelease</types1:ModifiedBy>
+      <types1:ModificationDate>2019-10-22T18:51:11Z</types1:ModificationDate>
+      <types1:PublicationStatus>out-of-date</types1:PublicationStatus>
+      <types1:PublishedBy>bhim-prerelease</types1:PublishedBy>
+      <types1:PublicationDate>2019-10-22T18:47:50Z</types1:PublicationDate>
+      <types1:PublishedContributionId>project:/rt.connector/MaterialStockSvcCn/MaterialStockSvcCn_svcDef.xml</types1:PublishedContributionId>
+      <types1:AutosaveExists>false</types1:AutosaveExists>
+      <types1:Entry>
+         <businessConnector xmlns="http://schemas.informatica.com/socrates/data-services/2014/05/business-connector-model.xsd"
+                            agentOnly="false"
+                            debug="false"
+                            displayName="MaterialStockSvcCn"
+                            label=""
+                            name="MaterialStockSvcCn"
+                            uuid="918590e1-ba43-45d8-b0e2-c808f1e358fe">
+            <description>This service enables you to retrieve material stock information using the OData protocol with filter data provided in the payload. It can be consumed by external warehouse applications.</description>
+            <tags/>
+            <connectionAttributes xmlns="http://schemas.informatica.com/appmodules/screenflow/2014/04/avosConnectors.xsd">
+               <connectionAttribute description="Host Name"
+                                    masked="false"
+                                    name="hostName"
+                                    required="true"
+                                    testWith="sandbox.api.sap.com"
+                                    type="string"/>
+               <connectionAttribute description="User Name"
+                                    masked="false"
+                                    name="username"
+                                    required="false"
+                                    testWith=""
+                                    type="string"/>
+               <connectionAttribute description="Password"
+                                    masked="true"
+                                    name="password"
+                                    required="false"
+                                    testWith=""
+                                    type="string"/>
+            </connectionAttributes>
+            <actions>
+               <action category="A_MaterialStock"
+                       failOnError="true"
+                       forSearch="false"
+                       label="GET_A_MaterialStock"
+                       maxRedirects="100"
+                       name="GET_A_MaterialStock"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get entities from A_MaterialStock</description>
+                  <input>
+                     <parameter description="Show only the first n items, see [OData Paging - Top](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374630)"
+                                label="$top"
+                                name="$top"
+                                required="false"
+                                testWith="2"
+                                type="int"/>
+                     <parameter description="Skip the first n items, see [OData Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374631)"
+                                label="$skip"
+                                name="$skip"
+                                required="false"
+                                testWith=""
+                                type="int"/>
+                     <parameter description="Filter items by property values, see [OData Filtering](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374625)"
+                                label="$filter"
+                                name="$filter"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Include count of items, see [OData Count](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/#InlinecountSystemQueryOption)"
+                                label="$inlinecount"
+                                name="$inlinecount"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"allpages","label":"allpages"},{"value":"none","label":"none"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374629)"
+                                label="$orderby"
+                                name="$orderby"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"Material","label":"Material"},{"value":"Material desc","label":"Material desc"},{"value":"MaterialBaseUnit","label":"MaterialBaseUnit"},{"value":"MaterialBaseUnit desc","label":"MaterialBaseUnit desc"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374620)"
+                                label="$select"
+                                name="$select"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"Material","label":"Material"},{"value":"MaterialBaseUnit","label":"MaterialBaseUnit"},{"value":"to_MatlStkInAcctMod","label":"to_MatlStkInAcctMod"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Expand related entities, see [OData Expand](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374621)"
+                                label="$expand"
+                                name="$expand"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"to_MatlStkInAcctMod","label":"to_MatlStkInAcctMod"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/s4hanacloud/sap/opu/odata/sap/API_MATERIAL_STOCK_SRV/A_MaterialStock"
+                                        verb="GET">
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                           <header name="apikey">3a4FYpbfxILCRgeYaF3egTnS6E97QUxM</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Retrieved entities"
+                            entireResponse="true"
+                            name="entireResponse"
+                            type="object"/>
+                  </output>
+               </action>
+               <action category="A_MaterialStock"
+                       failOnError="true"
+                       forSearch="false"
+                       label="GET_A_MaterialStock_Material_"
+                       maxRedirects="100"
+                       name="GET_A_MaterialStock_Material_"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get entity from A_MaterialStock by key</description>
+                  <input>
+                     <parameter description="Material Number"
+                                label="MaterialPathParam"
+                                name="MaterialPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374620)"
+                                label="$select"
+                                name="$select"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"Material","label":"Material"},{"value":"MaterialBaseUnit","label":"MaterialBaseUnit"},{"value":"to_MatlStkInAcctMod","label":"to_MatlStkInAcctMod"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Expand related entities, see [OData Expand](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374621)"
+                                label="$expand"
+                                name="$expand"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"to_MatlStkInAcctMod","label":"to_MatlStkInAcctMod"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/s4hanacloud/sap/opu/odata/sap/API_MATERIAL_STOCK_SRV/A_MaterialStock('{$MaterialPathParam}')"
+                                        verb="GET">
+                        <authentication>
+                           <username>{$username}</username>
+                           <password>{$password}</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Retrieved entity"
+                            entireResponse="true"
+                            name="entireResponse"
+                            type="object"/>
+                  </output>
+               </action>
+               <action category="A_MatlStkInAcctMod"
+                       failOnError="true"
+                       forSearch="false"
+                       label="GET_A_MatlStkInAcctMod_Material_Material_InventorySpecialStockType_InventorySpecialStockType_InventoryStockType_InventoryStockType_Plant_Plant_StorageLocation_StorageLocation_Batch_Batch_Supplier_Supplier_Customer_Customer_WBSElementInternalID_WBSElementInternalID_SDDocument_SDDocument_SDDocumentItem_SDDocumentItem_"
+                       maxRedirects="100"
+                       name="GET_A_MatlStkInAcctMod_Material_Material_InventorySpecialStockType_InventorySpecialStockType_InventoryStockType_InventoryStockType_Plant_Plant_StorageLocation_StorageLocation_Batch_Batch_Supplier_Supplier_Customer_Customer_WBSElementInternalID_WBSElementInternalID_SDDocument_SDDocument_SDDocumentItem_SDDocumentItem_"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get entity from A_MatlStkInAcctMod by key</description>
+                  <input>
+                     <parameter description="Material in Respect of Which Stock is Managed"
+                                label="MaterialPathParam"
+                                name="MaterialPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Special Stock Indicator"
+                                label="InventorySpecialStockTypePathParam"
+                                name="InventorySpecialStockTypePathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Stock Type of Goods Movement (Stock Identifier)"
+                                label="InventoryStockTypePathParam"
+                                name="InventoryStockTypePathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Plant"
+                                label="PlantPathParam"
+                                name="PlantPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Storage Location"
+                                label="StorageLocationPathParam"
+                                name="StorageLocationPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Batch Number (Stock Identifier)"
+                                label="BatchPathParam"
+                                name="BatchPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Account Number of Supplier or Creditor (Stock Identifier)"
+                                label="SupplierPathParam"
+                                name="SupplierPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Customer Number (Stock Identifier)"
+                                label="CustomerPathParam"
+                                name="CustomerPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Valuated Sales Order Stock WBS Element"
+                                label="WBSElementInternalIDPathParam"
+                                name="WBSElementInternalIDPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Sales Order Number of Valuated Sales Order Stock"
+                                label="SDDocumentPathParam"
+                                name="SDDocumentPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Sales Order Item of Valuated Sales Order Stock"
+                                label="SDDocumentItemPathParam"
+                                name="SDDocumentItemPathParam"
+                                nogen="true"
+                                required="true"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374620)"
+                                label="$select"
+                                name="$select"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"Material","label":"Material"},{"value":"InventorySpecialStockType","label":"InventorySpecialStockType"},{"value":"InventoryStockType","label":"InventoryStockType"},{"value":"MaterialBaseUnit","label":"MaterialBaseUnit"},{"value":"MatlWrhsStkQtyInMatlBaseUnit","label":"MatlWrhsStkQtyInMatlBaseUnit"},{"value":"Plant","label":"Plant"},{"value":"StorageLocation","label":"StorageLocation"},{"value":"Batch","label":"Batch"},{"value":"Supplier","label":"Supplier"},{"value":"Customer","label":"Customer"},{"value":"WBSElementInternalID","label":"WBSElementInternalID"},{"value":"SDDocument","label":"SDDocument"},{"value":"SDDocumentItem","label":"SDDocumentItem"},{"value":"to_MaterialStock","label":"to_MaterialStock"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Expand related entities, see [OData Expand](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374621)"
+                                label="$expand"
+                                name="$expand"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"to_MaterialStock","label":"to_MaterialStock"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/s4hanacloud/sap/opu/odata/sap/API_MATERIAL_STOCK_SRV/A_MatlStkInAcctMod(Material='{$MaterialPathParam}',InventorySpecialStockType='{$InventorySpecialStockTypePathParam}',InventoryStockType='{$InventoryStockTypePathParam}',Plant='{$PlantPathParam}',StorageLocation='{$StorageLocationPathParam}',Batch='{$BatchPathParam}',Supplier='{$SupplierPathParam}',Customer='{$CustomerPathParam}',WBSElementInternalID='{$WBSElementInternalIDPathParam}',SDDocument='{$SDDocumentPathParam}',SDDocumentItem='{$SDDocumentItemPathParam}')"
+                                        verb="GET">
+                        <authentication>
+                           <username>{$username}</username>
+                           <password>{$password}</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Retrieved entity"
+                            entireResponse="true"
+                            name="entireResponse"
+                            type="object"/>
+                  </output>
+               </action>
+               <action category="A_MatlStkInAcctMod"
+                       failOnError="true"
+                       forSearch="false"
+                       label="GET_A_MatlStkInAcctMod"
+                       maxRedirects="100"
+                       name="GET_A_MatlStkInAcctMod"
+                       preemptiveAuth="true"
+                       responseEncoding="">
+                  <description>Get entities from A_MatlStkInAcctMod</description>
+                  <input>
+                     <parameter description="Show only the first n items, see [OData Paging - Top](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374630)"
+                                label="$top"
+                                name="$top"
+                                required="false"
+                                testWith=""
+                                type="int"/>
+                     <parameter description="Skip the first n items, see [OData Paging - Skip](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374631)"
+                                label="$skip"
+                                name="$skip"
+                                required="false"
+                                testWith=""
+                                type="int"/>
+                     <parameter description="Filter items by property values, see [OData Filtering](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374625)"
+                                label="$filter"
+                                name="$filter"
+                                required="false"
+                                testWith=""
+                                type="string"/>
+                     <parameter description="Include count of items, see [OData Count](http://www.odata.org/documentation/odata-version-2-0/uri-conventions/#InlinecountSystemQueryOption)"
+                                label="$inlinecount"
+                                name="$inlinecount"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"allpages","label":"allpages"},{"value":"none","label":"none"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Order items by property values, see [OData Sorting](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374629)"
+                                label="$orderby"
+                                name="$orderby"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"Material","label":"Material"},{"value":"Material desc","label":"Material desc"},{"value":"InventorySpecialStockType","label":"InventorySpecialStockType"},{"value":"InventorySpecialStockType desc","label":"InventorySpecialStockType desc"},{"value":"InventoryStockType","label":"InventoryStockType"},{"value":"InventoryStockType desc","label":"InventoryStockType desc"},{"value":"MaterialBaseUnit","label":"MaterialBaseUnit"},{"value":"MaterialBaseUnit desc","label":"MaterialBaseUnit desc"},{"value":"MatlWrhsStkQtyInMatlBaseUnit","label":"MatlWrhsStkQtyInMatlBaseUnit"},{"value":"MatlWrhsStkQtyInMatlBaseUnit desc","label":"MatlWrhsStkQtyInMatlBaseUnit desc"},{"value":"Plant","label":"Plant"},{"value":"Plant desc","label":"Plant desc"},{"value":"StorageLocation","label":"StorageLocation"},{"value":"StorageLocation desc","label":"StorageLocation desc"},{"value":"Batch","label":"Batch"},{"value":"Batch desc","label":"Batch desc"},{"value":"Supplier","label":"Supplier"},{"value":"Supplier desc","label":"Supplier desc"},{"value":"Customer","label":"Customer"},{"value":"Customer desc","label":"Customer desc"},{"value":"WBSElementInternalID","label":"WBSElementInternalID"},{"value":"WBSElementInternalID desc","label":"WBSElementInternalID desc"},{"value":"SDDocument","label":"SDDocument"},{"value":"SDDocument desc","label":"SDDocument desc"},{"value":"SDDocumentItem","label":"SDDocumentItem"},{"value":"SDDocumentItem desc","label":"SDDocumentItem desc"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Select properties to be returned, see [OData Select](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374620)"
+                                label="$select"
+                                name="$select"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"Material","label":"Material"},{"value":"InventorySpecialStockType","label":"InventorySpecialStockType"},{"value":"InventoryStockType","label":"InventoryStockType"},{"value":"MaterialBaseUnit","label":"MaterialBaseUnit"},{"value":"MatlWrhsStkQtyInMatlBaseUnit","label":"MatlWrhsStkQtyInMatlBaseUnit"},{"value":"Plant","label":"Plant"},{"value":"StorageLocation","label":"StorageLocation"},{"value":"Batch","label":"Batch"},{"value":"Supplier","label":"Supplier"},{"value":"Customer","label":"Customer"},{"value":"WBSElementInternalID","label":"WBSElementInternalID"},{"value":"SDDocument","label":"SDDocument"},{"value":"SDDocumentItem","label":"SDDocumentItem"},{"value":"to_MaterialStock","label":"to_MaterialStock"}]</option>
+                        </options>
+                     </parameter>
+                     <parameter description="Expand related entities, see [OData Expand](http://docs.oasis-open.org/odata/odata/v4.0/odata-v4.0-part1-protocol.html#_Toc445374621)"
+                                label="$expand"
+                                name="$expand"
+                                required="false"
+                                testWith=""
+                                type="picklist">
+                        <options>
+                           <option name="values">[{"value":"to_MaterialStock","label":"to_MaterialStock"}]</option>
+                        </options>
+                     </parameter>
+                  </input>
+                  <binding>
+                     <restSimpleBinding multiUsing="semicolonSeparated"
+                                        url="https://{$hostName}/s4hanacloud/sap/opu/odata/sap/API_MATERIAL_STOCK_SRV/A_MatlStkInAcctMod"
+                                        verb="GET">
+                        <authentication>
+                           <username>{$username}</username>
+                           <password>{$password}</password>
+                           <isExpressionInPassword>true</isExpressionInPassword>
+                        </authentication>
+                        <httpHeaders>
+                           <header name="Content-Type">application/json</header>
+                           <header name="Accept">application/json</header>
+                        </httpHeaders>
+                     </restSimpleBinding>
+                  </binding>
+                  <output>
+                     <field description="Retrieved entities"
+                            entireResponse="true"
+                            name="entireResponse"
+                            type="object"/>
+                  </output>
+               </action>
+            </actions>
+            <objects>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="odata_error_main">
+                  <description/>
+                  <detail>
+                     <field name="code" type="string"/>
+                     <field name="innererror" type="object"/>
+                     <field name="details" type="objectlist">
+                        <options>
+                           <option name="referenceTo">odata_error_detail</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="message" type="string"/>
+                     <field name="target" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="odata_error_detail">
+                  <description/>
+                  <detail>
+                     <field name="code" type="string"/>
+                     <field name="message" type="string"/>
+                     <field name="target" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="odata_error">
+                  <description/>
+                  <detail>
+                     <field name="error" type="reference">
+                        <options>
+                           <option name="referenceTo">odata_error_main</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="API_MATERIAL_STOCK_SRV_A_MaterialStockType">
+                  <description>API view by consuming Material Stock</description>
+                  <detail>
+                     <field name="MaterialBaseUnit" type="string"/>
+                     <field name="to_MatlStkInAcctMod" type="object"/>
+                     <field name="Material" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="API_MATERIAL_STOCK_SRV_A_MatlStkInAcctModType">
+                  <description>API view by directly consuming I_MaterialStock</description>
+                  <detail>
+                     <field name="WBSElementInternalID" type="string"/>
+                     <field name="Customer" type="string"/>
+                     <field name="Material" type="string"/>
+                     <field name="to_MaterialStock" type="reference">
+                        <options>
+                           <option name="referenceTo">API_MATERIAL_STOCK_SRV_A_MaterialStockType</option>
+                           <option name="relationshipName">Child</option>
+                        </options>
+                     </field>
+                     <field name="InventorySpecialStockType" type="string"/>
+                     <field name="MaterialBaseUnit" type="string"/>
+                     <field name="Plant" type="string"/>
+                     <field name="SDDocumentItem" type="string"/>
+                     <field name="Batch" type="string"/>
+                     <field name="MatlWrhsStkQtyInMatlBaseUnit" type="string"/>
+                     <field name="InventoryStockType" type="string"/>
+                     <field name="SDDocument" type="string"/>
+                     <field name="Supplier" type="string"/>
+                     <field name="StorageLocation" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="string">
+                  <description/>
+                  <detail>
+                     <field name="string" type="string"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="boolean">
+                  <description/>
+                  <detail>
+                     <field name="boolean" type="boolean"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="double">
+                  <description/>
+                  <detail>
+                     <field name="double" type="double"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="integer">
+                  <description/>
+                  <detail>
+                     <field name="integer" type="int"/>
+                  </detail>
+               </processObject>
+               <processObject xmlns="http://schemas.active-endpoints.com/appmodules/screenflow/2011/06/avosHostEnvironment.xsd"
+                              isByCopy="true"
+                              name="error">
+                  <description>Error</description>
+                  <detail/>
+               </processObject>
+            </objects>
+         </businessConnector>
+      </types1:Entry>
+      <types1:GUID>aAMC01nw929lw2RSX808At</types1:GUID>
+      <types1:DisplayName>MaterialStockSvcCn</types1:DisplayName>
+   </types1:Item>
+   <types1:CurrentServerDateTime>2019-11-04T15:40:41.319Z</types1:CurrentServerDateTime>
+</aetgt:getResponse>
